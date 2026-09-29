@@ -3,7 +3,6 @@ pool: default
 trigger: 
  branches:
    include:
-     - main
      - feature
 stages:
   - stage: terraforminit

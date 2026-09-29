@@ -12,6 +12,19 @@ stages:
       - job: terraforminit
         displayName: terraform init
         steps:
-          - 
+        - task: TerraformInstaller@1
+          inputs:
+            terraformVersion: 'latest'
+        - task: TerraformTask@5
+          inputs:
+            provider: 'azurerm'
+            command: 'init'
+            workingDirectory: '$(System.DefaultWorkingDirectory)/enviroment/preprod'
+            backendServiceArm: 'Infra_service_connection'
+            backendAzureRmOverrideSubscriptionID: 'd5184da3-0771-4c5d-9775-0af8d536f827'
+            backendAzureRmResourceGroupName: 'rg_dev'
+            backendAzureRmStorageAccountName: 'biditstg'
+            backendAzureRmContainerName: 'biditcontainer'
+            backendAzureRmKey: 'dev.tfstate'
 
 

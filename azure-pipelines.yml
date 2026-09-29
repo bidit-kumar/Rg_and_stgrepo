@@ -1,0 +1,17 @@
+pool: default
+
+trigger: 
+ branches:
+   include:
+     - main
+     - feature
+stages:
+  - stage: terraforminit
+    displayName: terraform 
+    jobs:
+      - job: terraforminit
+        displayName: terraform init
+        steps:
+          - 
+
+

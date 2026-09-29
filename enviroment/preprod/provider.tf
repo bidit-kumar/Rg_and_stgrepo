@@ -5,9 +5,11 @@ terraform {
       version = "5.3.0"
     }
   }
-  backend "azurerm" { 
-    resource_group_name = "value"
-    
+  backend "azurerm" {
+    resource_group_name  = "rg_dev"
+    storage_account_name = "biditstg"
+    container_name       = "bidit_container"
+    key                  = "dev.tfstate"
   }
 }
 

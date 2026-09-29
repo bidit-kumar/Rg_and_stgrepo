@@ -5,6 +5,10 @@ terraform {
       version = "5.3.0"
     }
   }
+  backend "azurerm" { 
+    resource_group_name = "value"
+    
+  }
 }
 
 provider "azurerm" {
